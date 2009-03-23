@@ -19,7 +19,7 @@
 				var o = this.options;
 
 				this.noticeBox = this.element;
-				this.hide();
+				if (!o.autoShow) this.hide();
 				this.noticeBox.attr('role', 'notice')
 				this.noticeBox.wrapInner('<div><span></span></div>');
 				this.innerBox = this.noticeBox.children().eq(0).addClass(o.innerBoxClass);
@@ -100,7 +100,7 @@
 			type: 'alert',
 			text: false,
 			animate: true,
-			autoShow: false,
+			autoShow: true,
 			autoHide: false,
 			// styling
 			widgetClass: 'ui-helper-reset ui-widget',
