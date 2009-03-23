@@ -1,11 +1,12 @@
 /*
- * Notice Draft 0.1
+ * Notice Draft 0.2
  * for jQuery UI
  *
  * Copyright (c) 2009 idle sign
  *
  * Depends:
  *	ui.core.js
+ *	effects.pulsate.js
  */
 (function($) {
 
@@ -65,10 +66,15 @@
 		animate: function(){
 			var o = this.options,
 				fn = '';
-			if (o.autoHide){
-				fn = function(){ $(this).hide(); }
+
+			if (o.animate){
+				if (o.autoHide){
+					fn = function(){ $(this).hide(); }
+				}
+				this.noticeBox.effect('pulsate', { times:3 }, 1000, fn );
+			} else {
+				this.noticeBox.show();
 			}
-			this.noticeBox.effect('pulsate', { times:3 }, 1000, fn );
 		},
 
 		hide: function(){
@@ -83,17 +89,17 @@
 			this.noticeBox
 				.html(this.storedText)
 				.removeAttr('role')
-				.removeClass(o.widgetClass)
-				.remove();
+				.removeClass(o.widgetClass);
 		}
 
 	});
 
 	$.extend($.ui.notice, {
-		version: '0.1',
+		version: '0.2',
 		defaults: {
 			type: 'alert',
 			text: false,
+			animate: true,
 			autoShow: false,
 			autoHide: false,
 			// styling
