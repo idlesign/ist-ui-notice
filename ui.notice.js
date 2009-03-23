@@ -58,8 +58,10 @@
 		},
 
 		show: function(params){
-			if (params.type) this.setType(params.type)
-			if (params.text) this.text(params.text);
+			if (params){
+				if (params.type) this.setType(params.type)
+				if (params.text) this.text(params.text);
+			}
 			this.animate();
 		},
 
