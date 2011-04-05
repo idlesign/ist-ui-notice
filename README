@@ -1,0 +1,57 @@
+jQuery UI Notice Plugin
+=======================
+https://github.com/idlesign/ist-ui-notice
+
+
+What's that?
+------------
+This is a notice (info/alert) plugin for jQuery UI 1.8+.
+It creates Highlight / Error boxes as shown at http://jqueryui.com/themeroller/
+
+
+Initial markup examples
+-----------------------
+
+<div id="info_box">
+    Here we are at this beautiful island.
+</div>
+
+<div id="alert_box">
+    Hey! Watch out for snarks!
+</div>
+
+
+Widgets init examples
+---------------------
+
+$('#info_box').notice();
+$('#alert_box').notice({type: 'alert'});
+
+
+Widget options
+--------------
+
+* type: Notice type defining widget presentation.
+        - info (default)
+        - alert
+
+* pulsate: Whether widget should be animated with pulsate effect.
+    Default: false.
+
+* visible: Widget visibility toggle.
+    Default: true.
+
+* content: Option to put widget contents runtime.
+    Default: false (as 'not used').
+
+* autoHideTimeout: Timeout in seconds after which widget should disappear.
+    Default: false (as 'not used').
+
+* showIcon: Whether to show small icon, depending on widget type.
+    Default: true.
+
+* iconInfo: jQuery UI icon name to be shown with 'info' widget type.
+    Default: 'ui-icon-info'.
+
+* iconAlert: jQuery UI icon name to be shown with 'alert' widget type.
+    Default: 'ui-icon-alert'.
